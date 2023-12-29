@@ -1,0 +1,104 @@
+
+.container{
+
+   
+    background-color: #ffffff;
+    max-height: 70vh;
+}
+
+.horizontal-menu-container {
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+   
+    
+  }
+
+  .menu-container{
+    display: flex;
+    overflow: hidden;
+    background: #f6f7ff;
+    border: 1px solid #DDE9F8; 
+  }
+  
+  .scroll-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .horizontal-menu {
+    display: flex;
+    white-space: nowrap;
+    flex: 1;
+    
+    overflow: hidden;
+  }
+
+  svg{
+    display: none;
+  }
+
+  .my-custom-class a{
+   
+    padding: 2px 24px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #858e98 !important;
+    padding: 4px;
+    margin: 9px;
+    border: 1px solid #ccc;
+    border-radius: 27px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+
+  .routerLinkActive a{
+    background-color: #ffffff !important;
+    padding: 2px 24px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #28387a !important;
+    padding: 4px;
+    margin: 9px;
+    border: 1px solid #ccc;
+    border-radius: 27px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+    font-family: Poppins;
+font-size: 1rem;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 2.25rem */
+letter-spacing: 0.02519rem;
+  }
+
+  .routerLinkActive svg{
+    display: inline-block;
+    width: 1rem;
+height: 1rem;
+  }
+  
+  
+  a{
+text-decoration: none;
+color: #28387a;
+  }
+  
+  @media only screen and (min-width: 200px) and (max-width: 767px)  {
+    .horizontal-menu {
+        overflow-x: auto !important;
+    }
+   
+    }
+
+    @media only screen and (max-width: 376px) {
+      .container{
+          min-height: 80vh;
+      }
+    }

@@ -1,0 +1,34 @@
+.items{
+    background: #C5DCFA80;
+    }
+    
+    .my-custom-class, a {
+        text-decoration: none;
+        color: #737373;
+        
+    }
+    
+    .my-custom-class svg{
+    
+        width: 1.0rem;
+        height: 1.0rem;
+        margin: -2.75px 1.38px -0.75px -9.06px;;
+    }
+    
+    ::ng-deep .active a{
+        background-color: white !important;
+        padding: 4px 24px;
+        display: inline-block;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #54b689 !important;
+    }
+    
+    @media only screen and (min-width: 200px) and (max-width: 767px)  {
+        ::ng-deep .mat-mdc-tab-label-container {
+            overflow-x: auto !important;
+        }
+       
+        }
+    
+    

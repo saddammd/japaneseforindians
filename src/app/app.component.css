@@ -1,0 +1,143 @@
+.menu-color{
+    color: #787a7b
+}
+
+.shiksha{
+color: #28387a;
+text-align: center;
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+width: 7.625rem;
+height: 1.75rem;
+flex-shrink: 0;
+}
+
+.navbar{
+    font-family: -apple-system;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+   }
+.nav-link:hover{
+   color: #54b689;
+   transition: all 0.2s;
+   border-bottom: 2px solid;
+   border-width: 0.1px;
+}
+
+.container{
+    background-color: #ffffff;
+    max-height: 80vh;
+  /*  display: flex;*/
+}
+
+p{
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+    color: #f2fbfb;
+}
+
+
+.btn-custom-success {
+    background-color: #54b689;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.text-body-success{
+    color: #54b689;
+}
+
+.btn-custom-success:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(1.0);  
+}
+
+img{
+    opacity: 0.8;
+}
+
+img{
+    opacity: 0.8;
+    opacity: 0.9;
+}
+
+.highlight-text {
+    color: #ffffff; /* Yellow or Gold text */
+    /* You can replace 'red' with your desired eye-catching color */
+    font-weight: bold; /* Make the text bold if desired */
+    /* Add more styling as needed */
+  }
+  
+ul.outer-circle > li{
+    font-size: 18px;
+    line-height: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 36px;
+    background-color: #E1F8E8;
+    color: #fff;
+    margin: 0 3px 3px 0;
+    margin-left: -2rem;
+}
+
+ul.outer-circle > li > img{
+    margin-left: 0.35rem;
+}
+
+.social-media-container{
+    margin-top: 7.5rem;
+    margin-left: -11.7rem;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-lead{
+    display: block;
+    margin-top: 4rem;
+    margin-left: -7rem;
+}
+
+.footer-container1{
+    background-color: #DAECDF;
+    display: flex;
+}
+
+.footer-lhs{
+    margin-top: -2rem;
+    margin-left: 2rem;
+    display: flex;
+}
+
+.footer-rhs{
+    margin-top: -7rem;
+    margin-left: 20rem;
+}
+
+.footer-rhs button{
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 376px) {
+    .footer-rhs{
+        margin-top: -11rem;
+        margin-left: -9rem;
+        max-height: 69vh;
+    }
+
+    .footer-lhs{
+        margin-top: 13rem;
+    }
+
+    
+
+    .social-media-container{
+        margin-top: 7.5rem;
+        margin-left: -9.7rem;
+        display: flex;
+        gap: 29px;
+    }
+  }

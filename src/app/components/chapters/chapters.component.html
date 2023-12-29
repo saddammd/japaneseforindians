@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="menu-container">
+        <button class="scroll-button" (click)="scrollLeft()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="horizontal-menu" #menuContainer>
+
+            <div *ngFor="let chapter of menuItems; let i = 'index + 1'">
+                <span class="my-custom-class" [id]="'chapter' +i">
+                  <a   [routerLink]="['/chapters', 'chapter'+i]" (click)="onLinkClick(i, 'chapter' +i)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 6.84315L17.6569 12.5L12 18.1569L6.34319 12.5L12 6.84315ZM21.8995 12.5L12 22.3995L2.10055 12.5L12 2.60051L21.8995 12.5Z"
+                        fill="#54B689" />
+                    </svg>{{chapter}}
+                  </a>
+                </span>
+              </div>
+              
+        </div>
+        <button class="scroll-button" (click)="scrollRight()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+    
+
+
+
+<router-outlet></router-outlet>
+
+</div>

@@ -1,0 +1,338 @@
+.container{
+    background-color: #ffffff;
+    text-decoration: none;
+        
+}
+
+.counter{
+    margin-top: -0.5rem;
+    margin-left: 33rem;
+    padding-bottom: 0rem;
+    display: inline-block;
+    color: var(--Secondary, #141E46);
+font-variant-numeric: lining-nums tabular-nums;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Poppins;
+font-size: 1rem;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 2.25rem */
+letter-spacing: 0.02519rem;
+}
+
+.english{
+    font-style: italic;
+     font-size: 20px;
+}
+
+.mat-icon{
+    color: #78c6a2;
+    margin-right: 10px;
+}
+
+/* Vocabulary Exercise */
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18.75rem;
+    height: 14.75rem;
+    margin: -7.375rem;
+    margin-left: -9rem;
+    perspective: 500px;
+    overflow: hidden;
+    float: left;
+    margin-top: -6rem;
+
+}
+
+.content-container{
+    margin: 8rem;
+    margin-left: 0px;
+    
+}
+
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    
+ 
+
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .content {
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+    
+    
+}
+
+.front, .back
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    color: #03446A;;
+    text-align: center;
+    padding-top: 100px;
+    border-radius:5px;
+    backface-visibility: hidden;
+    font-size: 1.5rem;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 2.25rem */
+}
+.back{
+    background: #03446A;
+    color: white;
+    transform: rotateY(180deg);    
+}
+
+
+
+.buttons {
+    z-index: 1;
+    visibility: visible;
+    display: flex;
+}
+
+
+
+.next {
+    background-color: black;
+    color: #f1f1f1;
+}
+
+
+.btn-custom-success {
+    background-color: #54b689;
+    color: #ffffff;
+    border-radius: 25px;
+    z-index: 1;
+    width: 10rem;
+    margin-left: 30rem;
+    margin-top: 4.7rem;
+    position: absolute;
+}
+
+.btn-custom-success .mat-icon{
+    color: #ffffff;
+    margin: 0px;
+    padding: 3px;
+}
+
+.text-body-success {
+    color: #54b689;
+}
+
+.btn-custom-success:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(1.0);
+}
+
+.videourl{
+    margin: 1rem;
+    margin-left: 16rem;
+}
+
+iframe{
+    height: 14rem;
+    width: 23rem;
+    margin-left: 7rem;
+}
+.skip-next-computer, .skip-prev-computer{
+    display: inline-flex;
+}
+
+.skip-next-mobile, .skip-prev-mobile{
+    display: none;
+}
+.skip-next, .skip-prev {
+    
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    margin-top: -2rem;
+   background-color: black; /* Background color */
+    color: #fff; /* Text color */
+    border-radius: 50%; /* Creates a round shape */
+    font-size: 20px; /* Adjust the font size as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  /* Hover effect */
+  .skip-next:hover, .skip-prev:hover {
+    background-color: black; /* Change the background color on hover */
+  }
+
+  .skip-prev {
+    margin-left: 22rem;
+    position: absolute;
+}
+.skip-next{
+    margin-left: 44.5rem;
+    margin-bottom: -9rem;
+}
+
+.form-check-input:checked {
+    background-color: #78c6a2;
+    border-color: #78c6a2;
+}
+
+.container-quiz{
+    max-width: 75vh;
+}
+
+.container-quiz h3{
+    color: #78c6a2;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  /* Remove borders and padding from table cells */
+  td{
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    width: auto;
+    margin: 1rem;
+  }
+  .person{
+    white-space: nowrap;
+  }
+
+
+@media only screen and (max-width: 376px) {
+ 
+    .container {
+        min-height: 80vh;
+    }
+
+    .counter{
+        padding-top: 16.89999999999999rem;
+        margin-left: 9.5rem;
+    }
+    .card{
+        margin-top: -15rem;
+        margin-left: -9rem;
+    }
+
+    front{
+        width: 14.875rem;
+    height: 15.875rem;
+    }
+    .skip-next{
+        display: inline-flex;
+        margin-left: 5.9rem;
+        margin-top: -8rem;
+        z-index: 1;
+        background-color: #54b689;
+        color: aliceblue;
+        border-radius: 3px;
+        width: 7rem;
+        position: absolute;
+    }
+
+    .skip-prev{
+        display: inline-flex;
+        margin-left: -5.9rem;
+        margin-top: -8rem;
+        background-color: #54b689;
+        color: aliceblue;
+        border-radius: 3px;
+        width: 7rem;
+        position: absolute;
+    }
+    .btn-custom-success{
+        margin-left: -5.5rem;
+        margin-top:-3.5rem;
+        width:18rem;
+    }
+
+    .mat-mdc-tab-body-content {
+        height: 49vh;
+        overflow: auto;
+    }
+    ::ng-deep .mat-mdc-tab-body {
+        min-height: 65vh;
+    }
+    .content-container{
+        margin: 7rem;
+    }
+    .videourl{
+        margin-left: -8rem;
+    }
+    iframe{
+    height: 14rem;
+    width: 19rem;
+    margin-left: 9rem;
+    margin-top: 5rem;
+    }
+}
+
+
+
+
+
+
+ 
+
+
+/* temporary commented 
+  @media only screen and (max-width: 1285px) {
+    .buttons {
+        margin-top: 37rem;
+    }
+}
+
+
+@media only screen and (max-width: 1025px) {
+    .buttons {
+        margin-top: 30rem;
+    }
+}
+
+@media only screen and (max-width: 913px) {
+    .buttons {
+        margin-top: 53rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 821px) {
+    .buttons {
+        margin-top: 47rem;
+    }
+}
+
+
+@media only screen and (max-width: 415px) {
+    .buttons {
+        margin-top: 47rem;
+    }
+}
+
+
+@media only screen and (max-width: 376px) {
+    .buttons {
+        margin-top: 37rem;
+    }
+}
+*/
+
+
+
