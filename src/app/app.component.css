@@ -5,14 +5,30 @@
 .shiksha{
 color: #28387a;
 text-align: center;
-font-size: 1.5rem;
+font-size: 1.2rem;
 font-style: normal;
 font-weight: 800;
 line-height: normal;
-width: 7.625rem;
-height: 1.75rem;
+width: 3.625rem;
+height: 1.29rem;
 flex-shrink: 0;
+padding-top: 0.2rem;
 }
+
+.shiksha-footer{
+    color: #28387a;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    width: 3.625rem;
+    height: 1.29rem;
+    flex-shrink: 0;
+    padding-bottom: 0.2rem;
+    }
+
+
 
 .navbar{
     font-family: -apple-system;
@@ -89,21 +105,23 @@ ul.outer-circle > li > img{
 }
 
 .social-media-container{
-    margin-top: 7.5rem;
-    margin-left: -11.7rem;
+    margin-top: 5.5rem;
+    margin-left: -3.5rem;
     display: flex;
     gap: 20px;
 }
 
 .footer-lead{
-    display: block;
     margin-top: 4rem;
-    margin-left: -7rem;
+    margin-left: -4.7rem;
+    padding: 1rem;
 }
 
 .footer-container1{
     background-color: #DAECDF;
     display: flex;
+    justify-content: space-between;
+    
 }
 
 .footer-lhs{
@@ -114,30 +132,64 @@ ul.outer-circle > li > img{
 
 .footer-rhs{
     margin-top: -7rem;
-    margin-left: 20rem;
 }
 
 .footer-rhs button{
     margin-top: 1rem;
 }
 
-@media only screen and (max-width: 376px) {
-    .footer-rhs{
-        margin-top: -11rem;
-        margin-left: -9rem;
-        max-height: 69vh;
-    }
+.logo-title-container{
+    display: block;
+}
+.navbar-brand{
+    display: flex;
+}
 
-    .footer-lhs{
-        margin-top: 13rem;
+@media (min-width: 360px) and (max-width: 374px) {
+    
+    .container{
+        min-width: 100vw;
+    }
+    .footer-container1{
+        
+        flex-direction: column;
+    }
+    .footer-rhs {
+        order: 1;
     }
 
     
-
-    .social-media-container{
-        margin-top: 7.5rem;
-        margin-left: -9.7rem;
-        display: flex;
-        gap: 29px;
+    .footer-lhs {
+        order: 2;
     }
-  }
+    .logo-img{
+        margin-top: 1.5rem;
+    }
+}
+
+    
+
+@media (min-width: 375px) and (max-width: 431px) {
+    
+    .container{
+        min-width: 100vw;
+    }
+    .footer-container1{
+        
+        flex-direction: column;
+    }
+    .footer-rhs {
+        order: 1;
+    }
+
+    
+    .footer-lhs {
+        order: 2;
+    }
+    .logo-img{
+        margin-top: 1.5rem;
+    }
+}
+
+
+
