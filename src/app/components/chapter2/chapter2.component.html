@@ -1,50 +1,149 @@
 <div class="container">
-    
+
     <mat-tab-group>
 
         <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="vocabulary-lesson">library_books</mat-icon>
-                   Vocabulary Exercise 
+                Vocabulary
             </ng-template>
-            content
+
+            <span class="counter">{{i+1}}/{{vocabulary.Content.length}}</span>
+            <div class="content-container">
+
+                <div class="card">
+                    <div class="content" id="contentid" (click)="flip()">
+                        <div class="front">
+                            {{hiragana}}
+                        </div>
+                        <div class="back">
+                            <span style="font-weight:200px;"> {{romaji}} </span><br>
+                            <p class="english"> {{english}} </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="buttons d-grid gap-2">
+
+                    <mat-icon class="skip-prev skip-prev-computer" (click)="prevValue()">skip_previous</mat-icon>
+                    <button class="skip-prev skip-prev-mobile"(click)="prevValue()"> <i class="fa-solid fa-arrow-left"></i>&nbsp;
+                        Back</button>
+
+
+                    <button type="button" (click)="flip()" class=" btn btn-custom-success btn-lg px-4 me-md-2">
+                        <mat-icon>repeat</mat-icon>
+                        Flip
+                    </button>
+                    <mat-icon class="skip-next skip-next-computer" (click)="nextValue1()">skip_next</mat-icon>
+                    <button class="skip-next skip-next-mobile" (click)="nextValue1()"> Next &nbsp; 
+                        <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+
         </mat-tab>
 
 
         <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="video-lesson">video_library</mat-icon>
-                
-                   Video Lesson
-                
-                      
+                Video
             </ng-template>
-            content
+            <div class="videourl">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/L_2g88yAlAc?si=90jnSM_mHQH_FsD3"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
         </mat-tab>
 
         <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="quiz-lesson">chrome_reader_mode</mat-icon>
-                
-                   Reading
-                
-                      
+
+                Reading
+
+
             </ng-template>
-            content
+            <div class="reading-container">
+            <h2>しょうかい</h2>
+            <table>           
+                <tr>
+                    <td class="person">やまだ：</td>
+                    <td>おはようございます。</td>
+                </tr>
+                <tr>
+                    <td class="person">ほんだ：</td>
+                    <td>おはようございます　やまださん、おげんきですか？</td>
+                </tr>
+                <tr>
+                    <td class="person">やまだ：</td>
+                    <td>はい、げんきです。　ほんださんはげんきですか？</td>
+                </tr>
+                <tr>
+                    <td class="person">ほんだ：</td>
+                    <td>はい、おかげさまで。</td>
+                </tr>
+                <tr>
+                    <td class="person">やまだ：</td>
+                    <td>ほんださん、これはなんですか？</td>
+                </tr>
+                <tr>
+                    <td class="person">ほんだ：</td>
+                    <td>これは　えいご　の　ほん　です。　わたし　の　えいご　の　せんせい　は　ピーターせんせいです。</td>
+                </tr>
+
+                <tr>
+                    <td class="person">やまだ：</td>
+                    <td>ピーター　せんせい　は　べいこく　じん　です　か？</td>
+                </tr>
+                <tr>
+                    <td class="person">ほんだ：</td>
+                    <td>いいえ、イギリスじん　です。</td>
+                </tr>
+            </table>
+            　
+            <h2>**************</h2>
+        </div>
         </mat-tab>
 
 
         <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="quiz-lesson">edit</mat-icon>
-                
-                   Quiz
-                
-                      
+
+                Quiz
+
+
             </ng-template>
-            content
+            <div class="container-quiz">
+                <div class="timer" *ngIf="remainingTime >= 0">
+                    <div class="time-container"><span class="time-left">Time Left: &nbsp;</span> <span class="time">{{ remainingTime }} </span></div>
+                    <div class="progress-bar">
+                      <div [style.width.%]="progressWidth"></div>
+                    </div>
+                  </div>
+                <div class="question-count"><p>Question {{quiz_i+1}}/{{quiz.question.length}}</p></div>
+                <h2 id="question">{{Question}}</h2>
+                <div class="answer-buttons">
+                    <button class="answer-btn lead" id="A" (click)="next($event)">{{answer[0].text}}</button>
+                    
+                    <button class="answer-btn lead" id="B" (click)="next($event)">{{answer[1].text}}</button>
+                    
+                    <button class="answer-btn lead" id="C" (click)="next($event)">{{answer[2].text}}</button>
+                    
+                    <button class="answer-btn lead" id="D" (click)="next($event)">{{answer[3].text}}</button>
+                </div>
+            </div>
+            <div class="result-container">
+                <h3>Each Question Should Be Attended Within 15 Seconds.</h3>
+                <button type="button" class="btn btn-custom-success btn-lg px-4 text-body-success"
+                (click)="startQuiz()"> Start Quiz </button>
+            </div>
         </mat-tab>
 
-       
+
     </mat-tab-group>
 </div>

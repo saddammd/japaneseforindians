@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BackendconnectionService } from 'src/app/services/backendconnection.service';
 
 @Component({
   selector: 'app-chapters',
@@ -27,17 +28,30 @@ export class ChaptersComponent {
   lastClickedId: string | null = null;
   currentChapter!: string[];
   currentChapterId!: string[];
+  isLoading: boolean = false;
+   
 
   constructor(private router: Router,
     private renderer: Renderer2,
     private el: ElementRef,
-    private route: ActivatedRoute){}
+    private route: ActivatedRoute,
+    private service: BackendconnectionService){
+
+    }
 
   ngOnInit(): void {
     // Initialize menu items
     for (let i = 1; i <= 30; i++) {
       this.menuItems.push(`Chapter ${i}`);
     }
+
+    this.service.isLoading$.subscribe(isloading => {
+      this.isLoading = isloading;
+    })
+    this.service.isdisplay$.subscribe(isdisplay =>{
+      const skeletonContainer = document.querySelector('.skeleton-container') as HTMLElement;
+     skeletonContainer.style.display = isdisplay;
+    })
    
   }
 
@@ -55,13 +69,16 @@ export class ChaptersComponent {
   }
 
   onLinkClick(chapterId: number, id: string): void {
+    this.service.setLoadingState(true,'block');
+    
+
     this.router.navigate(['/chapters', 'chapter'+chapterId]);
     
     // Example: Apply styles to the element with the id
     if (this.lastClickedId) {
     const linkElement = this.el.nativeElement.querySelector(`#${this.lastClickedId}`);
     this.renderer.removeClass(linkElement, 'routerLinkActive');
-    console.log("style removed to id" +id);
+    
     }
       // Add the 'routerLinkActive' class to the newly clicked element
       const currentClickedElement = this.el.nativeElement.querySelector(`#${id}`);
@@ -70,8 +87,9 @@ export class ChaptersComponent {
   
       // Update the lastClickedId to the current clicked id
       this.lastClickedId = id;
-
-  }
+      const resultContainer = this.el.nativeElement.querySelector('.result-container') as HTMLElement;
+      resultContainer.style.display = 'none';
+    }
 
   scrollLeft() {
     this.animateScroll(-this.scrollAmount);

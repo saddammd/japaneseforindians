@@ -1,4 +1,24 @@
+.skeleton-container {
+  background-color: #e0e0e0; 
+  overflow: hidden; 
+  height: 100vh;  
+  width: 100vw;
+}
 
+.skeleton-loading {
+  animation: loadingAnimation 1s infinite; /* Customize the animation duration */
+  background: linear-gradient(to right,transparent, #ffffff, transparent);
+  height:100%;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 .container{
 
    
@@ -89,6 +109,26 @@ height: 1rem;
 text-decoration: none;
 color: #28387a;
   }
+
+  .result-container{
+    max-width: 100vw;
+    min-height: 50vh;
+    background: #ffffff;
+    color:  #03446A;
+    text-align: center;
+    padding-top: 100px;
+    border-radius:5px;
+    font-size: 1.5rem;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 2.25rem */
+margin-left: 16rem;
+margin-top: 1rem;
+}
+
+.result-container h3{
+  margin-left: -13rem;
+}
   
   @media only screen and (min-width: 200px) and (max-width: 767px)  {
     .horizontal-menu {
@@ -115,4 +155,47 @@ color: #28387a;
 }
 
 
+@media only screen and (max-width: 430px) {
+    
+  .result-container h3{
+      margin-left: -16rem;
+  }
+}
 
+@media (min-width: 375px) and (max-width: 411px) {
+
+  .result-container h3{
+    margin-left: -16rem;
+}
+}
+@keyframes blink {
+  0% {
+    opacity: 1; /* Visible */
+  }
+
+  50% {
+    opacity: 0; /* Invisible */
+  }
+
+  100% {
+    opacity: 1; /* Visible */
+  }
+}
+
+/* Apply the blinking animation to an element */
+@keyframes blink {
+  0% {
+    opacity: 1; /* Visible */
+  }
+
+  50% {
+    opacity: 0; /* Invisible */
+  }
+
+  100% {
+    opacity: 1; /* Visible */
+  }
+}
+.fa-up-long {
+  animation: blink 1s infinite; /* Change the duration or animation properties as needed */
+}

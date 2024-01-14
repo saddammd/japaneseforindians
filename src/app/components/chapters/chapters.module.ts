@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { ChaptersRoutingModule } from './chapters-routing.module';
 
@@ -9,6 +9,6 @@ import { ChaptersRoutingModule } from './chapters-routing.module';
   imports: [
     CommonModule,
     ChaptersRoutingModule,
-  ]
+  ],
 })
 export class ChaptersModule { }

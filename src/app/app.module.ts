@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,6 +17,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChaptersComponent } from './components/chapters/chapters.component';
 import { Chapter1Component } from './components/chapter1/chapter1.component';
 import { Chapter2Component } from './components/chapter2/chapter2.component';
+import { Chapter3Component } from './components/chapter3/chapter3.component';
+import { Chapter4Component } from './components/chapter4/chapter4.component';
+import { Chapter5Component } from './components/chapter5/chapter5.component';
 
 
 const routes: Routes = [
@@ -31,6 +34,9 @@ const routes: Routes = [
     ChaptersComponent,
     Chapter1Component,
     Chapter2Component,
+    Chapter3Component,
+    Chapter4Component,
+    Chapter5Component,
   ],
   imports: [
     BrowserModule,

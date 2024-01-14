@@ -22,10 +22,23 @@
             <i class="fa-solid fa-chevron-right"></i>
         </button>
     </div>
+
+    
+  <div class="result-container">
+      <h3><i class="fa-solid fa-up-long"></i><br>
+        Select The Chapter From Above 
+        .</h3>
+  </div>
     
 
-
+  
+  <!--<ng-container *ngIf="isLoading">
+    <div class="skeleton-container">
+      <div class="skeleton-image skeleton-loading"></div>
+      </div>
+  </ng-container> 
+<router-outlet *ngIf="!isLoading"></router-outlet>
+-->
 
 <router-outlet></router-outlet>
-
 </div>

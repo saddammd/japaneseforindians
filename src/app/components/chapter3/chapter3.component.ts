@@ -6,11 +6,11 @@ import { TimerService } from 'src/app/services/timer.service';
 
 
 @Component({
-  selector: 'app-chapter2',
-  templateUrl: './chapter2.component.html',
-  styleUrls: ['./chapter2.component.css']
+  selector: 'app-chapter3',
+  templateUrl: './chapter3.component.html',
+  styleUrls: ['./chapter3.component.css']
 })
-export class Chapter2Component {
+export class Chapter3Component {
 /*Quiz Variables Declaration  Start*/
   quiz = new Quiz();
   Question:string = '';

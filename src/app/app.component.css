@@ -121,6 +121,7 @@ ul.outer-circle > li > img{
     background-color: #DAECDF;
     display: flex;
     justify-content: space-between;
+    gap: 5rem;
     
 }
 

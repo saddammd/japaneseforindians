@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -7,12 +7,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BackendconnectionService {
 
-  private apiUrl = 'http://localhost:9191/welcome'; // Replace with your API endpoint URL
+  private isLoadingSubject = new BehaviorSubject<boolean>(false);
+  private display = new BehaviorSubject<string>('none');
 
-  constructor(private http: HttpClient) { }
+  isLoading$ = this.isLoadingSubject.asObservable();
+  isdisplay$ = this.display.asObservable();
 
-  // Create an HTTP GET method
-  getData(): Observable<any> {
-    return this.http.get(this.apiUrl);
+   // Function to update the loading state
+   setLoadingState(isLoading: boolean, display:string): void {
+    this.isLoadingSubject.next(isLoading);
+    this.display.next(display);
   }
+
+  
 }
