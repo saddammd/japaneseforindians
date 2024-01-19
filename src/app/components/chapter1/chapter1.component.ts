@@ -55,11 +55,35 @@ export class Chapter1Component {
 
 /* Vocabulary Section Start*/
   displayVocabulary(iterator:number){
-    this.service.setLoadingState(false,'none');
+   // this.service.setLoadingState(false,'none');
+   if(iterator >= this.vocabulary.Content.length){
+    const flipBtn = this.el.nativeElement.querySelector('.flip-btn') as HTMLElement;
+    const resetBtn = this.el.nativeElement.querySelector('.reset-btn') as HTMLElement;
+    const skipPrevComputer = this.el.nativeElement.querySelector('.skip-prev') as HTMLElement;
+    const skipPrevMobile = this.el.nativeElement.querySelector('.skip-prev-mobile') as HTMLElement;
+    const skipNextComputer = this.el.nativeElement.querySelector('.skip-next') as HTMLElement;
+    const skipNextMobile = this.el.nativeElement.querySelector('.skip-next-mobile') as HTMLElement;
+    const card = this.el.nativeElement.querySelector('.card') as HTMLElement;
+    const counter = this.el.nativeElement.querySelector('.counter') as HTMLElement;
+
+    skipPrevComputer.style.display = 'none';
+    //skipPrevMobile.style.display = 'none';
+    skipNextComputer.style.display = 'none';
+    //skipNextMobile.style.display = 'none';
+    card.style.display = 'none';
+    counter.style.display = 'none';
+    resetBtn.style.display = 'inline-block';
+    
+
+    flipBtn.style.display = 'none';
+    flipBtn.style.background = '#03446A;'
+    flipBtn.style.color = '#ffffff'
+  }
     console.log("chapter 1 dispaly vocabulary")
     this.romaji = this.vocabulary.Content[iterator].Romaji;
     this.hiragana = this.vocabulary.Content[iterator].Hiragana;
     this.english = this.vocabulary.Content[iterator].English;
+   
   }
 
   prevValue(){
@@ -72,14 +96,9 @@ export class Chapter1Component {
     }
   }
   nextValue1(){
-    if(this.i < this.vocabulary.Content.length){
+    if(this.i <= this.vocabulary.Content.length){
       this.i++;
-      if(this.i != this.vocabulary.Content.length){
-      this.displayVocabulary(this.i);
-    }
-    else{
-      this.i = this.vocabulary.Content.length-1;
-    }
+      this.displayVocabulary(this.i);    
 
     }
     
@@ -94,6 +113,33 @@ export class Chapter1Component {
       document.getElementById('contentid')!.style.transform=this.rotate;
     }
   }
+  reset(){
+    this.i = 0;
+    this.displayVocabulary(this.i);
+
+    const flipBtn = this.el.nativeElement.querySelector('.flip-btn') as HTMLElement;
+    const resetBtn = this.el.nativeElement.querySelector('.reset-btn') as HTMLElement;
+    const skipPrevComputer = this.el.nativeElement.querySelector('.skip-prev') as HTMLElement;
+    const skipPrevMobile = this.el.nativeElement.querySelector('.skip-prev-mobile') as HTMLElement;
+    const skipNextComputer = this.el.nativeElement.querySelector('.skip-next') as HTMLElement;
+    const skipNextMobile = this.el.nativeElement.querySelector('.skip-next-mobile') as HTMLElement;
+    const card = this.el.nativeElement.querySelector('.card') as HTMLElement;
+    const counter = this.el.nativeElement.querySelector('.counter') as HTMLElement;
+
+    skipPrevComputer.style.display = 'inline-flex';
+   // skipPrevMobile.style.display = 'inline-flex';
+    skipNextComputer.style.display = 'inline-flex';
+   // skipNextMobile.style.display = 'inline-flex';
+    card.style.display = 'block';
+    counter.style.display = 'block';
+    resetBtn.style.display = 'none';
+    
+
+    flipBtn.style.display = 'block';
+    flipBtn.style.background = '#03446A;'
+    flipBtn.style.color = '#ffffff'
+  }
+
 /* Vocabulary Section End*/
 
 

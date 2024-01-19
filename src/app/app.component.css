@@ -126,7 +126,7 @@ ul.outer-circle > li > img{
 }
 
 .footer-lhs{
-    margin-top: -2rem;
+    margin-top: -7rem;
     margin-left: 2rem;
     display: flex;
 }
@@ -148,7 +148,15 @@ ul.outer-circle > li > img{
 .fa-whatsapp{
     background-color: green;
 }
-@media (min-width: 360px) and (max-width: 374px) {
+
+@media (min-width: 760px) and (max-width: 1024px) {
+    
+    .footer-lhs{
+        margin-top: -2rem;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 374px) {
     
     .container{
         min-width: 100vw;

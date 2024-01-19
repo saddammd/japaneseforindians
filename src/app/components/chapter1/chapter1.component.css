@@ -7,7 +7,7 @@
 }
 
 .counter{
-    margin-top: -0.5rem;
+    margin-top: 1.5rem;
     margin-left: 33rem;
     padding-bottom: 0rem;
     display: inline-block;
@@ -276,6 +276,10 @@ table {
 font-style: normal;
 font-weight: 600;
 line-height: 150%;
+  }
+
+  .reset-btn{
+    display: none;
   }
 
   /* ----------------------------------------QUIZ-----------------------*/
@@ -848,7 +852,7 @@ line-height: 150%;
     .counter{
         padding-top: 16.89999999999999rem;
         margin-left: 9.5rem;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
     .card{
         margin-top: -20rem;
@@ -862,7 +866,7 @@ line-height: 150%;
     .skip-next{
         display: inline-flex;
         margin-left: 5.9rem;
-        margin-top: -8rem;
+        margin-top: -7rem;
         z-index: 1;
         background-color: #78c6a2;
         color: #ffffff;
@@ -874,7 +878,7 @@ line-height: 150%;
     .skip-prev{
         display: inline-flex;
         margin-left: -5.9rem;
-        margin-top: -8rem;
+        margin-top: -7rem;
         background-color: #78c6a2;
         color: #ffffff;
         border-radius: 5px;
@@ -929,15 +933,3 @@ line-height: 150%;
         margin-left: -16rem;
     }
 }
-
- 
-   
-
-
-
-
-
- 
-
-
-
