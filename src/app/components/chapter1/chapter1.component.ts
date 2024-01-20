@@ -24,7 +24,7 @@ export class Chapter1Component {
   quiz_i: number = 3;
   optionItr: number = 0;
   score: number = 0;
-  remainingTime = 15;
+  remainingTime = 60;
   progressWidth = 100;
   timerSubscription: Subscription = new Subscription;
 
@@ -43,9 +43,7 @@ export class Chapter1Component {
   ngOnInit(): void {
     console.log("chapter 1 loaded")
     this.displayVocabulary(0);
-    this.displayQuiz(0);
-    
-    
+    this.displayQuiz(0);    
   }
 
   constructor(private el: ElementRef, private renderer: Renderer2,
@@ -60,16 +58,12 @@ export class Chapter1Component {
     const flipBtn = this.el.nativeElement.querySelector('.flip-btn') as HTMLElement;
     const resetBtn = this.el.nativeElement.querySelector('.reset-btn') as HTMLElement;
     const skipPrevComputer = this.el.nativeElement.querySelector('.skip-prev') as HTMLElement;
-    const skipPrevMobile = this.el.nativeElement.querySelector('.skip-prev-mobile') as HTMLElement;
     const skipNextComputer = this.el.nativeElement.querySelector('.skip-next') as HTMLElement;
-    const skipNextMobile = this.el.nativeElement.querySelector('.skip-next-mobile') as HTMLElement;
     const card = this.el.nativeElement.querySelector('.card') as HTMLElement;
     const counter = this.el.nativeElement.querySelector('.counter') as HTMLElement;
 
     skipPrevComputer.style.display = 'none';
-    //skipPrevMobile.style.display = 'none';
     skipNextComputer.style.display = 'none';
-    //skipNextMobile.style.display = 'none';
     card.style.display = 'none';
     counter.style.display = 'none';
     resetBtn.style.display = 'inline-block';
@@ -120,16 +114,12 @@ export class Chapter1Component {
     const flipBtn = this.el.nativeElement.querySelector('.flip-btn') as HTMLElement;
     const resetBtn = this.el.nativeElement.querySelector('.reset-btn') as HTMLElement;
     const skipPrevComputer = this.el.nativeElement.querySelector('.skip-prev') as HTMLElement;
-    const skipPrevMobile = this.el.nativeElement.querySelector('.skip-prev-mobile') as HTMLElement;
     const skipNextComputer = this.el.nativeElement.querySelector('.skip-next') as HTMLElement;
-    const skipNextMobile = this.el.nativeElement.querySelector('.skip-next-mobile') as HTMLElement;
     const card = this.el.nativeElement.querySelector('.card') as HTMLElement;
     const counter = this.el.nativeElement.querySelector('.counter') as HTMLElement;
 
     skipPrevComputer.style.display = 'inline-flex';
-   // skipPrevMobile.style.display = 'inline-flex';
     skipNextComputer.style.display = 'inline-flex';
-   // skipNextMobile.style.display = 'inline-flex';
     card.style.display = 'block';
     counter.style.display = 'block';
     resetBtn.style.display = 'none';
@@ -237,8 +227,10 @@ catch(error){
   
 
 if(this.quiz_i < this.quiz.question.length){
-  this.quiz_i++;
-  this.remainingTime = 16;
+ // this.quiz_i++;
+ const randomIndex = Math.floor(Math.random() * this.quiz.question.length)
+ this.quiz_i = randomIndex;
+  this.remainingTime = 61;
   this.endTimer();
   this.startTimer();
   if(this.quiz_i >= this.quiz.question.length){
@@ -282,7 +274,7 @@ startTimer(): void {
 }
 
 updateProgressBar(): void {
-  this.progressWidth = (this.remainingTime / 15) * 100;
+  this.progressWidth = (this.remainingTime / 60) * 100;
 }
 
    endTimer(): void {
@@ -290,4 +282,7 @@ updateProgressBar(): void {
     this.timerSubscription.unsubscribe();
   }
 }
+
+
+
 }

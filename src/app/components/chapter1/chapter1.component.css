@@ -933,3 +933,21 @@ line-height: 150%;
         margin-left: -16rem;
     }
 }
+
+
+@media (min-width: 380px) and (max-width: 850px) {
+    .counter{
+        margin-top: 4rem;
+    }
+
+    .card {
+        margin-top: -22rem;
+    }
+}
+
+@media (min-width: 410px) {
+    
+    .card {
+        margin-top: -15rem;
+    }
+}
